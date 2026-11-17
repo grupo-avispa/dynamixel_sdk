@@ -15,6 +15,7 @@ find_package(ament_cmake REQUIRED)
 find_package(dynamixel_sdk REQUIRED)
 find_package(dynamixel_sdk_custom_interfaces REQUIRED)
 find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
 
 # Build
 add_executable(read_write_node src/read_write_node.cpp)
@@ -28,6 +29,7 @@ target_link_libraries(read_write_node
   ${dynamixel_sdk_custom_interfaces_TARGETS}
   ${dynamixel_sdk_LIBRARIES}
   rclcpp::rclcpp
+  sensor_msgs::sensor_msgs
 )
 
 # Install
